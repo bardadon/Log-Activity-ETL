@@ -50,34 +50,32 @@ BEGIN
             # Every 50 transactions perform an update 
             if mod(counter,50) = 0 then
             
-				set @random_order_status = (SELECT ELT(0.5 + RAND() * 6, 'On Hold', 'Shipped', 'Resolved', 'In Process', 'Disputed', 'Cancelled'));
+		set @random_order_status = (SELECT ELT(0.5 + RAND() * 6, 'On Hold', 'Shipped', 'Resolved', 'In Process', 'Disputed', 'Cancelled'));
                 
-				update orders 
+		update orders 
                 set status = @random_order_status 
                 where orderNumber = @next_order_id;
                 
-			end if;
+	    end if;
             
-			# Every 25 transactions perform a delete 
+	    # Every 25 transactions perform a delete 
             if mod(counter,50) = 0 then
             
-				set @random_order_status = (SELECT ELT(0.5 + RAND() * 6, 'On Hold', 'Shipped', 'Resolved', 'In Process', 'Disputed', 'Cancelled'));
+		set @random_order_status = (SELECT ELT(0.5 + RAND() * 6, 'On Hold', 'Shipped', 'Resolved', 'In Process', 'Disputed', 'Cancelled'));
                 
-				delete from orderdetails
+		delete from orderdetails
                 where orderNumber = @next_order_id;
                 
-				delete from orders
+		delete from orders
                 where orderNumber = @next_order_id;
                 
-			end if;
+	   end if;
                   
-			# Stop inserting after 1000 orders
-			if counter = 1000 then
-				leave loop_label;
-			end if;
+	   # Stop inserting after 1000 orders
+		if counter = 1000 then
+			leave loop_label;
+		end if;
 
 	  end loop;
 end //
 DELIMITER //
-
-'
