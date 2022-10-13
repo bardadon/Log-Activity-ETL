@@ -2,10 +2,6 @@ apt-get update
 apt-get python3
 apt-get python3-pip
 
-python3 -m venv log_activity_etl
-
-bash source /log_activity_etl/bin/activate
-
 bash pip install -r requirements.txt
 
 python simulate_orders.py
