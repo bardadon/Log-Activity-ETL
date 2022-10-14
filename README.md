@@ -1,6 +1,7 @@
 # Log-Activity-ETL
 
 This ETL process is used for transferring data from MySQL's binary log and into Google's BigQuery for analysis.
+The activity within the company is simulated using a stored procedure.
 
 Check out my Medium article for more information about this process.
 
