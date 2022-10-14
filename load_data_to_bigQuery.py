@@ -1,3 +1,5 @@
+# load_data_to_bigQuery.py
+
 from csv import field_size_limit
 from google.cloud import bigquery, storage
 import os
@@ -131,9 +133,6 @@ def load_to_bigQuery(dataset_name='log_activity', table_name='log_table', date_t
         )  
 
     load_job.result() 
-
-
-    destination_table = bigquery_client.get_table(table_id)  
     print("Done. Loaded {} rows.".format(load_job.output_rows))
 
 
