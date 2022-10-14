@@ -1,8 +1,4 @@
-apt-get update
-apt-get python3
-apt-get python3-pip
-
-bash pip install -r requirements.txt
+pip install -r requirements.txt
 
 python simulate_orders.py
 
