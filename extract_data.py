@@ -1,12 +1,8 @@
 from pymysqlreplication import BinLogStreamReader
 from pymysqlreplication import row_event
 import configparser
-import pymysqlreplication
 import csv
-import time
-from datetime import timedelta
 import datetime
-import pytz
 
 '''
 Grab Configuration Values
@@ -35,7 +31,7 @@ mysql_settings = {
 
 # Grabbing today's date
 today = datetime.datetime.today()
-start_date = today - datetime.timedelta(minutes = 1 )
+start_date = today - datetime.timedelta(days= 1 )
 timestamp = start_date.timestamp()
 
 
@@ -46,7 +42,7 @@ b_stream = BinLogStreamReader(
     connection_settings=mysql_settings,
     server_id=100,
     only_events=[row_event.WriteRowsEvent, row_event.UpdateRowsEvent, row_event.DeleteRowsEvent],
-    skip_to_timestamp=timestamp
+    skip_to_timestamp=timestamp,
 )
 
 order_events = []
