@@ -6,6 +6,11 @@ The activity within the company is simulated using a stored procedure.
 Check out my Medium article for more information about this process:
 https://medium.com/@bdadon50/data-engineering-project-etl-for-analyzing-log-activity-a9dff9e7b044
 
+# Project Steps
+1. Extract Data Using MySQL’s Binary Log
+2. Load Data to Google’s Cloud Storage for Backup
+3. Load Data to Google’s BigQuery for Analyzing
+
 # Running the ETL
 1. Generate a service account configuration file from Google called: ServiceKey_GoogleCloud.json
 2. Create a file called: pipeline.conf with all the configurations required for logging into MySQL(as shown in the article)
