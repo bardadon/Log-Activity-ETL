@@ -3,7 +3,8 @@
 This ETL process is used for transferring data from MySQL's binary log and into Google's BigQuery for analysis.
 The activity within the company is simulated using a stored procedure.
 
-Check out my Medium article for more information about this process.
+Check out my Medium article for more information about this process:
+https://medium.com/@bdadon50/data-engineering-project-etl-for-analyzing-log-activity-a9dff9e7b044
 
 # Running the ETL
 1. Generate a service account configuration file from Google called: ServiceKey_GoogleCloud.json
