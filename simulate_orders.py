@@ -1,6 +1,7 @@
+# simulate_orders.py 
+
 import pymysql
 import configparser
-import time
 
 
 # Creating a parser object and reading from the config file
