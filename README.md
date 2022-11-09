@@ -7,6 +7,7 @@ Check out my Medium article for more information about this process:
 https://medium.com/@bdadon50/data-engineering-project-etl-for-analyzing-log-activity-a9dff9e7b044
 
 ## Project Architecture
+![document-2-1](https://user-images.githubusercontent.com/65648983/200833369-ca670a3c-58ce-4826-9afe-15b1c7024056.png)
 
 
 ## Project Steps
